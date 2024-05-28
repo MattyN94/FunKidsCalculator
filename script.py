@@ -29,6 +29,23 @@ def calculate():
     elif operation == "/":
         result.set(divide(num1, num2))
 
+def save_memory():
+    with open("memory.txt", "w") as file:
+        file.write(result.get())
+
+def retrieve_memory():
+    try:
+        with open("memory.txt", "r") as file:
+            value = file.read()
+            entry1.delete(0, tk.END)
+            entry1.insert(0, value)
+    except FileNotFoundError:
+        result.set("No memory found")
+
+def clear_memory():
+    with open("memory.txt", "w") as file:
+        file.write("")
+
 root = tk.Tk()
 root.title("Simple Calculator")
 
@@ -45,6 +62,15 @@ entry2.pack()
 
 calculate_button = tk.Button(root, text="Calculate", command=calculate)
 calculate_button.pack()
+
+m_plus_button = tk.Button(root, text="M+", command=save_memory)
+m_plus_button.pack()
+
+mrc_button = tk.Button(root, text="MRC", command=retrieve_memory)
+mrc_button.pack()
+
+mc_button = tk.Button(root, text="MC", command=clear_memory)
+mc_button.pack()
 
 result = tk.StringVar(root)
 result_label = tk.Label(root, textvariable=result)
