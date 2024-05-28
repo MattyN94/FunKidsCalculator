@@ -15,23 +15,32 @@ def divide(x, y):
     else:
         return x / y
 
+def format_result(value):
+    # Format the result to show without decimal if it's an integer
+    if value == int(value):
+        return int(value)
+    else:
+        return value
+
 def calculate():
     num1 = float(entry1.get())
     num2 = float(entry2.get())
     operation = operation_var.get()
 
     if operation == "+":
-        result.set(add(num1, num2))
+        result_value = add(num1, num2)
     elif operation == "-":
-        result.set(subtract(num1, num2))
+        result_value = subtract(num1, num2)
     elif operation == "*":
-        result.set(multiply(num1, num2))
+        result_value = multiply(num1, num2)
     elif operation == "/":
-        result.set(divide(num1, num2))
+        result_value = divide(num1, num2)
+
+    result.set(format_result(result_value))
 
 def save_memory():
     with open("memory.txt", "w") as file:
-        file.write(result.get())
+        file.write(str(result.get()))
 
 def retrieve_memory():
     try:
