@@ -6,7 +6,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
 }
+
 .calculator {
     background: white;
     padding: 20px;
@@ -15,36 +17,50 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 300px;
 }
+
 input {
     display: block;
-    width: calc(100% - 20px);
+    width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px 5px;
     font-size: 1.2em;
     border: 1px solid #ccc;
     border-radius: 5px;
     text-align: center;
 }
+
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     margin: 10px 0;
 }
+
+.memory-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
 button {
-    font-size: 1.5em;
-    padding: 10px 15px;
+    font-size: 1.2em;
+    padding: 10px;
     background: #ff9800;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 60px;
+    width: 90px;
+    text-align: center;
 }
+
 button:hover {
     background: #f57c00;
 }
+
 .result {
     margin-top: 10px;
     font-size: 1.5em;
