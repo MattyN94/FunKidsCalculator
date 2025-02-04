@@ -1,1 +1,1 @@
-This programme is intended to be a fun, simple calculator for children of school age to learn arithmetic. It is created using Python and uses loops so thjat the kids can use the programme over and over until they become bored.
+This programme is intended to be a fun, simple calculator for children of school age to learn arithmetic. It is created using Python and uses loops so that the kids can use the programme over and over until they become bored.
